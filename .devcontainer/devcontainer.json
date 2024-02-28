@@ -48,5 +48,9 @@
         ]
       }
     }
-  }
+  },
+  "mounts": [
+    // Custom configuration directory
+    "source=/data/Pagit/DomoRpiHa/homeassistant/dev-config,target=/config,type=bind"
+  ]
 }
