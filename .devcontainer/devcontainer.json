@@ -56,5 +56,12 @@
         }
       }
     }
-  }
+  },
+
+  "mounts": [
+    // Custom configuration directory
+    "source=/data/My/DomoRpiHa/homeassistant/dev-config,target=${containerWorkspaceFolder}/config,type=bind",
+    // Localtuya
+    "source=/data/My/DomoRpiHa/devel/integrations/localtuya/custom_components/localtuya,target=${containerWorkspaceFolder}/config/custom_components/localtuya,type=bind"
+  ]
 }
