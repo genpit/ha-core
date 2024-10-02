@@ -4,8 +4,9 @@
   "dockerFile": "../Dockerfile.dev",
   "postCreateCommand": "script/setup",
   "postStartCommand": "script/bootstrap",
-  "containerEnv": { "DEVCONTAINER": "1" },
+  "containerEnv": { "DEVCONTAINER": "1", "DOMORPI_DUMMY": "1" },
   "appPort": ["8123:8123"],
+  //"runArgs": ["-e", "GIT_EDITOR=code --wait", "--device=/dev/ttyUSB0"],
   "runArgs": ["-e", "GIT_EDITOR=code --wait"],
   "customizations": {
     "vscode": {
@@ -51,10 +52,12 @@
   },
   "mounts": [
     // Custom configuration directory
-    "source=/data/Pagit/DomoRpiHa/homeassistant/dev-config,target=${containerWorkspaceFolder}/config,type=bind",
+    "source=/data/My/DomoRpiHa/homeassistant/dev-config,target=${containerWorkspaceFolder}/config,type=bind",
     // Custom components
-    "source=/data/Pagit/DomoRpiHa/devel/integrations/localtuya/custom_components/localtuya,target=${containerWorkspaceFolder}/config/custom_components/localtuya,type=bind",
+    "source=/data/My/DomoRpiHa/devel/integrations/localtuya/custom_components/localtuya,target=${containerWorkspaceFolder}/config/custom_components/localtuya,type=bind",
+    "source=/data/My/DomoRpiHa/devel/integrations/urmet_1045/custom_components/urmet_1045,target=${containerWorkspaceFolder}/config/custom_components/urmet_1045,type=bind",
+    "source=/data/My/DomoRpiHa/devel/integrations/domorpiha/custom_components/domorpiha,target=${containerWorkspaceFolder}/config/custom_components/domorpiha,type=bind",
     // Frontend
-    "source=/data/Pagit/DomoRpiHa/homeassistant/dev-frontend,target=/workspaces/frontend,type=bind,consistency=cached"
+    "source=/data/My/DomoRpiHa/homeassistant/dev-frontend,target=/workspaces/frontend,type=bind,consistency=cached"
   ]
 }

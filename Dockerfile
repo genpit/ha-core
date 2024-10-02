@@ -11,6 +11,11 @@ WORKDIR /usr/src
 
 ## Setup Home Assistant Core dependencies
 COPY requirements.txt homeassistant/
+
+## [PG] Local packages to be installed
+COPY domorpi-0.1.0-py3-none-any.whl homeassistant/
+RUN pip3 install homeassistant/domorpi-0.1.0-py3-none-any.whl
+
 COPY homeassistant/package_constraints.txt homeassistant/homeassistant/
 RUN \
     pip3 install \
