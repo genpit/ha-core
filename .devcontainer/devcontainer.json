@@ -62,6 +62,8 @@
     // Custom configuration directory
     "source=/data/My/DomoRpiHa/homeassistant/dev-config,target=${containerWorkspaceFolder}/config,type=bind",
     // Localtuya
-    "source=/data/My/DomoRpiHa/devel/integrations/localtuya/custom_components/localtuya,target=${containerWorkspaceFolder}/config/custom_components/localtuya,type=bind"
+    "source=/data/My/DomoRpiHa/devel/integrations/localtuya/custom_components/localtuya,target=${containerWorkspaceFolder}/config/custom_components/localtuya,type=bind",
+    // Urmet1045
+    "source=/data/My/DomoRpiHa/devel/integrations/urmet_1045/custom_components/urmet_1045,target=${containerWorkspaceFolder}/config/custom_components/urmet_1045,type=bind"
   ]
 }
