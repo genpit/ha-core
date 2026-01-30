@@ -45,7 +45,10 @@ RUN git clone --depth 1 https://github.com/home-assistant/hass-release \
     && uv pip install --system -e hass-release/ \
     && chown -R vscode /usr/src/hass-release/data
 
+RUN usermod -aG dialout vscode
+
 USER vscode
+
 ENV VIRTUAL_ENV="/home/vscode/.local/ha-venv"
 RUN uv venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
